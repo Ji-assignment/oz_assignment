@@ -1,32 +1,38 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap Demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-      .dark-mode {
-        background-color: #121212;
-        color: #ffffff;
+
+      body.dark-mode {
+          background-color: #121212;
+          color: #ffffff;
       }
-      .dark-mode .card {
-        background-color: #1e1e1e;
-        border-color: #333333;
+      
+      .navbar.dark-mode {
+          background-color: #333333;
       }
-      .dark-mode .navbar, .dark-mode .dropdown-menu, .dark-mode .pagination .page-item .page-link {
-        background-color: #1e1e1e;
-        border-color: #333333;
+      
+      .card.dark-mode {
+          background-color: #1f1f1f;
+          color: #ffffff;
       }
-      .dark-mode .table-hover tbody tr:hover {
-        background-color: #333333;
+      
+      .table.dark-mode thead {
+          background-color: #333333;
       }
-      .dark-mode .table-dark {
-        background-color: #343a40;
-        color: #ffffff;
+      
+      .table.dark-mode tbody tr {
+          background-color: #1f1f1f;
+          color: #ffffff;
       }
-      .dark-mode .table-dark th, .dark-mode .table-dark td {
-        border-color: #454d55;
+      
+      .pagination.dark-mode .page-link {
+          background-color: #333333;
+          color: #ffffff;
       }
     </style>
   </head>
@@ -61,51 +67,56 @@
       </div>
     </nav>
 
-    <button onclick="toggleDarkMode()" class="btn btn-secondary m-3">Toggle Dark Mode</button>
-
+    <button onclick="toggleDarkMode()" class="btn btn-secondary m-3">Dark Mode</button>
 
     <div class="card m-3" style="width: 18rem;">
       <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FTgFw3%2FbtrOreJak1E%2F0WF3uQPdFTzjVPYf7a0PKK%2Fimg.png" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">어서오너라</h5>
+        <p class="card-text">이 사이트는 영국에서 시작되어...</p>
+        <a href="#" class="btn btn-primary">이건 무슨 버튼임?</a>
       </div>
     </div>
 
-   
+
     <div class="container">
       <table class="table table-hover">
         <thead class="table-dark">
           <tr>
-            <th>#</th>
-            <th>First</th>
-            <th>Last</th>
-            <th>Handle</th>
+            <th>카테고리</th>
+            <th>브랜드</th>
+            <th>상품명</th>
+            <th>가격</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th>1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <th>상의</th>
+            <td>Supreme</td>
+            <td>슈프림 박스로고 후드티</td>
+            <td>390,000</td>
           </tr>
           <tr>
-            <th>2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
+            <th>하의</th>
+            <td>DIESEL</td>
+            <td>디젤 트랙 팬츠</td>
+            <td>188,000</td>
           </tr>
           <tr>
-            <th>3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
+            <th>신발</th>
+            <td>Nike</td>
+            <td>에어포스1</td>
+            <td>137,000</td>
+          </tr>
+          <tr>
+            <th>패션잡화</th>
+            <td>Music&Goods</td>
+            <td>빵빵이 키링</td>
+            <td>29,000</td>
           </tr>
         </tbody>
       </table>
     </div>
-
 
     <nav aria-label="Page navigation">
       <ul class="pagination justify-content-center">
@@ -121,8 +132,16 @@
       </ul>
     </nav>
 
-    <script src="index.js">
-
+    <script>
+      function toggleDarkMode() {
+          document.body.classList.toggle('dark-mode');
+          document.querySelector('.navbar').classList.toggle('dark-mode');
+          document.querySelectorAll('.card').forEach(card => card.classList.toggle('dark-mode'));
+          document.querySelectorAll('.table').forEach(table => table.classList.toggle('dark-mode'));
+          document.querySelector('.pagination').classList.toggle('dark-mode');
+      }
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
