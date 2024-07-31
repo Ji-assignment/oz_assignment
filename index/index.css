@@ -1,0 +1,28 @@
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  .navbar.dark-mode {
+    background-color: #333333;
+  }
+  
+  .card.dark-mode {
+    background-color: #1f1f1f;
+    color: #ffffff;
+  }
+  
+  .table.dark-mode thead {
+    background-color: #333333;
+  }
+  
+  .table.dark-mode tbody tr {
+    background-color: #1f1f1f;
+    color: #ffffff;
+  }
+  
+  .pagination.dark-mode .page-link {
+    background-color: #333333;
+    color: #ffffff;
+  }
+  
